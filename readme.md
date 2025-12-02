@@ -1,11 +1,11 @@
-❤️ Heart Disease Prediction using Machine Learning
+❤️ Heart Disease Prediction — End-to-End Machine Learning Project
 
-Educational Project – Not for Clinical Use
+Educational Project • Not for Medical Use
 
-This project demonstrates an end-to-end Machine Learning pipeline for predicting heart disease risk using a synthetic real-world–style dataset of 30,000+ patients.
-It includes data preprocessing, model training, evaluation, interpretability (SHAP), and deployment-ready structure.
+This project demonstrates a complete machine learning workflow for predicting the risk of heart disease using a synthetic real-world dataset of 30,000+ records.
+It includes data preprocessing, model benchmarking, interpretability (SHAP), and a deployment-ready API.
 
-📁 Project Structure
+📂 Project Structure
 heart-disease-ml-project/
 │
 ├── notebooks/
@@ -29,148 +29,82 @@ heart-disease-ml-project/
 │   └── app.py
 │
 ├── requirements.txt
-│
 └── README.md
 
-📊 Dataset Summary
+🧠 Project Overview
+✔ Dataset
 
-The dataset contains 30,000 synthetic patient records with clinically relevant features:
+30,000+ synthetic patient records with features such as:
 
-Age
+Demographics (age, sex)
 
-Sex
+Clinical measures (BP, cholesterol, oldpeak)
 
-Chest Pain Type
+ECG results
 
-Resting Blood Pressure
+Lifestyle factors (smoking, alcohol, activity level)
 
-Cholesterol
+Medical history (diabetes, hypertension, family history)
 
-Fasting Blood Sugar
+heart_disease (target)
 
-Resting ECG
+✔ ML Pipeline
 
-Maximum Heart Rate
+Preprocessing using ColumnTransformer
 
-Exercise-Induced Angina
+Train/validation split
 
-Oldpeak (ST Depression)
+Baseline → advanced models
 
-ST Slope
+Probability calibration
 
-BMI
+SHAP explainability
 
-Smoking
+Feature importance plots
 
-Diabetes
+API-ready model export
 
-Family History
-
-Physical Activity Level
-
-Alcohol Use
-
-Hypertension
-
-Heart Disease (Target)
-
-Note: Dataset is synthetic and used for educational purposes only.
-
-🧠 Machine Learning Pipeline
-✔ Data preprocessing
-
-Train/Validation/Test split
-
-Standard scaling
-
-One-Hot Encoding for categorical variables
-
-Passthrough for binary features
-
-Pipelines for reproducibility
-
-✔ Models trained
-
-Logistic Regression
-
-Random Forest
-
-XGBoost
-
-LightGBM
-
-MLP Classifier
-
-Stacking Ensemble (LR + RF + XGB)
-
-✔ Metrics used
-
-Accuracy
-
-ROC-AUC
-
-PR-AUC
-
-Precision, Recall, F1
-
-Calibration
-
-🏆 Best Model: XGBoost
-
-Example performance (replace with your real values):
-
+🏆 Model Performance (replace with your results)
 Model	ROC-AUC	PR-AUC	Accuracy
 Logistic Regression	0.87	0.62	0.80
 Random Forest	0.92	0.70	0.85
 XGBoost (Best)	0.94	0.76	0.87
 LightGBM	0.93	0.74	0.86
-MLP	0.89	0.66	0.82
 Stacking Ensemble	0.95	0.77	0.88
+📈 Visual Results
+ROC Curve
 
-(Values are example placeholders — replace with your notebook outputs.)
+Precision-Recall Curve
 
-📈 Visualizations Included
-✔ ROC Curve
+Random Forest Feature Importance
 
-✔ Precision-Recall Curve
+XGBoost Feature Importance
 
-✔ Random Forest Feature Importance
+SHAP Summary
 
-✔ XGBoost Feature Importance
+Decision Tree
 
-✔ SHAP Summary (Global Interpretability)
+🧩 Interpretability Insights (SHAP)
 
-✔ Decision Tree Visualization
+Oldpeak, Age, Cholesterol, Max HR, Exercise Angina are strong predictors
 
-🧩 Model Interpretability (Important for Healthcare)
+Consistent with clinical knowledge
 
-Key insights from Random Forest + SHAP analysis:
+Improves trust + transparency
 
-Oldpeak is a major risk driver
-
-Age increases risk almost linearly
-
-Cholesterol and Resting BP contribute strongly
-
-Exercise Angina and Max Heart Rate influence decision boundaries
-
-SHAP summary plot shows clinically meaningful patterns
-
-🚀 Deployment (API Ready)
-
-API is built using FastAPI.
+🚀 API Deployment (FastAPI)
 
 Run API locally:
 
 uvicorn api.app:app --reload
 
 
-Endpoint:
+Predict endpoint:
 
 POST /predict
 
 
-Request body example:
+Example input:
 
 {
   "age": 54,
@@ -181,27 +115,17 @@ Request body example:
   "smoking": 0
 }
 
-⚠️ Ethical Disclaimer
+⚠️ Limitations
 
-This project is strictly educational.
-The model must NOT be used for diagnosis, treatment, or clinical decision-making.
-Synthetic data is used — no real patients involved.
+Synthetic dataset
 
-📌 Future Improvements
+Not medically validated
 
-Add probability calibration (Platt/Isotonic)
+For learning and demonstration only
 
-Fairness testing across demographic groups
+Should not be used for diagnosis
 
-Hyperparameter tuning with Optuna
+👤 Author — Mehul “Mj” Chaudhary
 
-Deployment via Streamlit or HuggingFace Spaces
-
-Convert API into a full app (UI + backend)
-
-👤 Author
-
-Mehul J. Chaudhary (Mj)
 AI-powered Epidemiology Expert
-Data Analyst | ML Engineer
-India
+Data Scientist | ML Engineer | Health Analytics
